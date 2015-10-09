@@ -1,0 +1,75 @@
+Mytrip\AdminBundle\Entity\StoryContent:
+    type: entity
+    table: story_content
+    indexes:
+        story_id:
+            columns:
+                - story_id
+    id:
+        storyContentId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: story_content_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+        subHead:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: sub_head
+        content:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+        metaTitle:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+            column: meta_title
+        metaDescription:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+            column: meta_description
+        metaKeyword:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+            column: meta_keyword
+        lan:
+            type: string
+            nullable: false
+            length: 2
+            fixed: false
+            comment: ''
+    manyToOne:
+        story:
+            targetEntity: Story
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                story_id:
+                    referencedColumnName: story_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

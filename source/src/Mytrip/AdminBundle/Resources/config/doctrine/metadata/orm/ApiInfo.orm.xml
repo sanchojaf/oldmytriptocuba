@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="ApiInfo" table="api_info">
+    <indexes>
+      <index name="api_id" columns="api_id"/>
+    </indexes>
+    <id name="apiInfoId" type="integer" column="api_info_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="metaKey" type="string" column="meta_key" length="255" nullable="true"/>
+    <field name="metaValue" type="text" column="meta_value" nullable="true"/>
+    <many-to-one field="api" target-entity="ApiGateway">
+      <join-columns>
+        <join-column name="api_id" referenced-column-name="api_id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

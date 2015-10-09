@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="SocialLink" table="social_link">
+    <id name="socialLinkId" type="integer" column="social_link_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="site" type="string" column="site" length="50" nullable="false"/>
+    <field name="link" type="text" column="link" nullable="false"/>
+    <field name="createdDate" type="datetime" column="created_date" nullable="false"/>
+  </entity>
+</doctrine-mapping>

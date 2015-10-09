@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="BookingTransaction" table="booking_transaction">
+    <indexes>
+      <index name="booking_id" columns="booking_id"/>
+    </indexes>
+    <id name="bookingTransactionId" type="integer" column="booking_transaction_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="paymentType" type="string" column="payment_type" length="150" nullable="false"/>
+    <field name="transactionId" type="string" column="transaction_id" length="255" nullable="false"/>
+    <field name="transactionDate" type="string" column="transaction_date" length="255" nullable="false"/>
+    <field name="transactionAmount" type="string" column="transaction_amount" length="255" nullable="false"/>
+    <many-to-one field="booking" target-entity="Booking">
+      <join-columns>
+        <join-column name="booking_id" referenced-column-name="booking_id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,43 @@
+Mytrip\AdminBundle\Entity\ApiInfo:
+    type: entity
+    table: api_info
+    indexes:
+        api_id:
+            columns:
+                - api_id
+    id:
+        apiInfoId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: api_info_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        metaKey:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+            column: meta_key
+        metaValue:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+            column: meta_value
+    manyToOne:
+        api:
+            targetEntity: ApiGateway
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                api_id:
+                    referencedColumnName: api_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

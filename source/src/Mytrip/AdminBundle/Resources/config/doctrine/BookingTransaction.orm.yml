@@ -1,0 +1,64 @@
+Mytrip\AdminBundle\Entity\BookingTransaction:
+    type: entity
+    table: booking_transaction
+    indexes:
+        booking_id:
+            columns:
+                - booking_id
+    id:
+        bookingTransactionId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: booking_transaction_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        paymentType:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+            column: payment_type
+        transactionId:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: transaction_id
+        transactionDate:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: transaction_date
+        transactionAmount:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: transaction_amount
+        transactionCurrency:
+            type: string
+            nullable: false
+            length: 3
+            fixed: false
+            comment: ''
+            column: transaction_currency
+    manyToOne:
+        booking:
+            targetEntity: Booking
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                booking_id:
+                    referencedColumnName: booking_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Hostal" table="hostal">
+    <indexes>
+      <index name="destination_id" columns="destination_id"/>
+    </indexes>
+    <id name="hostalId" type="integer" column="hostal_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="50" nullable="false"/>
+    <field name="phone" type="string" column="phone" length="150" nullable="true"/>
+    <field name="mobile" type="string" column="mobile" length="150" nullable="true"/>
+    <field name="video" type="string" column="video" length="255" nullable="true"/>
+    <field name="latitude" type="string" column="latitude" length="255" nullable="false"/>
+    <field name="longitude" type="string" column="longitude" length="255" nullable="false"/>
+    <field name="rooms" type="integer" column="rooms" nullable="false"/>
+    <field name="guests" type="integer" column="guests" nullable="false"/>
+    <field name="adults" type="integer" column="adults" nullable="false"/>
+    <field name="child" type="integer" column="child" nullable="false"/>
+    <field name="price" type="float" column="price" precision="8" scale="2" nullable="false"/>
+    <field name="createdDate" type="datetime" column="created_date" nullable="false"/>
+    <field name="modifyDate" type="datetime" column="modify_date" nullable="false"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+    <many-to-one field="destination" target-entity="Destination">
+      <join-columns>
+        <join-column name="destination_id" referenced-column-name="destination_id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

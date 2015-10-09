@@ -1,0 +1,119 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Message Notification */
+.unreadMsg {
+	background:#484848;
+}
+/* Menu BG*/
+#myslidemenu {
+    background: url(../../img/admin/grey-menu-bg.png)  repeat-x scroll 0 0 transparent;
+}
+
+/* Sub level menu links style */
+.myslidemenu ul li ul li a{
+border-bottom: 1px solid #2ba6d7;/* changes for other theme */
+}
+
+#myslidemenu ul li{
+background:url(../../img/admin/grey-menu-bg.png) repeat-x; /* changes for other theme */ /*background of tabs (default state)*/
+border-right: 1px solid #aaaaaa;/* changes for other theme */
+border-left: 1px solid #686868;/* changes for other theme */
+}
+
+#myslidemenu ul li:hover, #myslidemenu ul li.active{
+background: #484848; /*tab link background during hover state*//* changes for other theme */
+}
+
+/* Button*/
+.button {
+	border: 1px solid #484848;
+	background: #858585;
+}
+
+/* Footer*/
+#footer {
+    background: none repeat scroll 0 0 #484848;
+}
+.help, .helptip, .suscribemsg {
+    background: none repeat scroll 0 0 #484848;
+}
+
+
+
+/* Pagination */
+#pagination{
+border:0; margin:0; padding:0;
+font-size:11px;
+list-style:none;
+margin-right:1px;
+}
+
+#pagination li{
+border:0; margin:0; padding:0;
+font-size:11px;
+list-style:none;
+margin-right:1px;
+}
+#pagination a,#pagination li em {
+border:solid 1px #E4E4E4;
+margin-right:1px;
+}
+ 
+ 
+#pagination .active{
+background:#484848;
+color:#FFFFFF;
+font-weight:bold;
+display:block;
+float:left;
+padding:3px 6px;
+}
+#pagination a:link,
+#pagination a:visited {
+color:#000;
+display:block;
+float:left;
+padding:5px 8px;
+text-decoration:none;
+}
+#pagination li  {
+color:#000;
+display:block;
+float:left;
+padding:3px;
+text-decoration:none;
+}
+#pagination a:hover,#pagination li em {
+border:solid 1px #E4E4E4;
+background-color:#484848;
+color:#FFFFFF;
+float:left;
+padding:5px 8px;
+text-decoration:none;
+}
+
+#pagination li span {
+border:solid 1px #E4E4E4;
+color:#CCC;
+float:left;
+padding:5px 8px;
+text-decoration:none;
+}
+
+#pagination li div {
+border:solid 1px #E4E4E4;
+color:#0e509e;
+float:left;
+padding:5px 8px;
+text-decoration:none;
+}
+
+#pagination li div:hover {
+border:solid 1px #E4E4E4;
+background-color:#484848;
+color:#FFFFFF;
+float:left;
+padding:5px 8px;
+text-decoration:none;
+}

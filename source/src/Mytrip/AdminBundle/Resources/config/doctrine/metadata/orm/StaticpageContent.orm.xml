@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="StaticpageContent" table="staticpage_content">
+    <indexes>
+      <index name="staticpage_id" columns="staticpage_id"/>
+    </indexes>
+    <id name="staticpageContentId" type="integer" column="staticpage_content_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="50" nullable="false"/>
+    <field name="pageTitle" type="string" column="page_title" length="255" nullable="true"/>
+    <field name="metaDescription" type="text" column="meta_description" nullable="true"/>
+    <field name="metaKeyword" type="text" column="meta_keyword" nullable="true"/>
+    <field name="content" type="text" column="content" nullable="true"/>
+    <field name="lan" type="string" column="lan" length="2" nullable="false"/>
+    <many-to-one field="staticpage" target-entity="Staticpage">
+      <join-columns>
+        <join-column name="staticpage_id" referenced-column-name="staticpage_id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

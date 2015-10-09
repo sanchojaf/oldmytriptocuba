@@ -1,0 +1,151 @@
+Mytrip\AdminBundle\Entity\User:
+    type: entity
+    table: user
+    id:
+        userId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: user_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        firstname:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        lastname:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        username:
+            type: string
+            nullable: true
+            length: 150
+            fixed: false
+            comment: ''
+        password:
+            type: string
+            nullable: true
+            length: 150
+            fixed: false
+            comment: ''
+        dob:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            comment: ''
+        email:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+        gender:
+            type: string
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+        cccode:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        phone:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            comment: ''
+        cmcode:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        mobile:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            comment: ''
+        address:
+            type: string
+            nullable: true
+            length: 150
+            fixed: false
+            comment: ''
+        address2:
+            type: string
+            nullable: true
+            length: 150
+            fixed: false
+            comment: ''
+        zip:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            comment: ''
+        city:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            comment: ''
+        province:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            comment: ''
+        country:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            comment: ''
+        image:
+            type: string
+            nullable: true
+            length: 150
+            fixed: false
+            comment: ''
+        lan:
+            type: string
+            nullable: false
+            length: 2
+            fixed: false
+            comment: ''
+        createdDate:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: CURRENT_TIMESTAMP
+            column: created_date
+        modifyDate:
+            type: datetime
+            nullable: false
+            comment: ''
+            column: modify_date
+        userKey:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: user_key
+        status:
+            type: string
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+    lifecycleCallbacks: {  }

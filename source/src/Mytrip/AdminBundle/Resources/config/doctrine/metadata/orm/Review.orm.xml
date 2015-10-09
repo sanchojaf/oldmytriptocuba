@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Review" table="review">
+    <indexes>
+      <index name="user_id" columns="user_id"/>
+    </indexes>
+    <id name="reviewId" type="integer" column="review_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="reviewType" type="string" column="review_type" nullable="false"/>
+    <field name="typeId" type="integer" column="type_id" nullable="false"/>
+    <field name="rating" type="integer" column="rating" nullable="false"/>
+    <field name="review" type="string" column="review" length="255" nullable="true"/>
+    <field name="lan" type="string" column="lan" length="2" nullable="false"/>
+    <field name="createdDate" type="datetime" column="created_date" nullable="false"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+    <many-to-one field="user" target-entity="User">
+      <join-columns>
+        <join-column name="user_id" referenced-column-name="user_id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,74 @@
+Mytrip\AdminBundle\Entity\Story:
+    type: entity
+    table: story
+    indexes:
+        hid:
+            columns:
+                - hostal_id
+        destination_id:
+            columns:
+                - destination_id
+    id:
+        storyId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: story_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        url:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+        topStory:
+            type: string
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            default: No
+            column: top_story
+        createdDate:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: CURRENT_TIMESTAMP
+            column: created_date
+        status:
+            type: string
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            default: Active
+    manyToOne:
+        hostal:
+            targetEntity: Hostal
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                hostal_id:
+                    referencedColumnName: hostal_id
+            orphanRemoval: false
+        destination:
+            targetEntity: Destination
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                destination_id:
+                    referencedColumnName: destination_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

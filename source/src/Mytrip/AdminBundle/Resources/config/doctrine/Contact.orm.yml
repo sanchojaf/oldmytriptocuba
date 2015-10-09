@@ -1,0 +1,89 @@
+Mytrip\AdminBundle\Entity\Contact:
+    type: entity
+    table: contact
+    id:
+        contactId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: contact_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        email:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+        phone:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            comment: ''
+        subject:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+        message:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+        view:
+            type: string
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            default: No
+        reply:
+            type: string
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            default: No
+        replysubject:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+        replyMessage:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+            column: reply_message
+        replyDate:
+            type: datetime
+            nullable: true
+            comment: ''
+            column: reply_date
+        createdDate:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: CURRENT_TIMESTAMP
+            column: created_date
+        lan:
+            type: string
+            nullable: false
+            length: 2
+            fixed: false
+            comment: ''
+    lifecycleCallbacks: {  }

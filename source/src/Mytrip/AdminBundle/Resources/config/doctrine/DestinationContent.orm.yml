@@ -1,0 +1,99 @@
+Mytrip\AdminBundle\Entity\DestinationContent:
+    type: entity
+    table: destination_content
+    indexes:
+        destination_id:
+            columns:
+                - destination_id
+    id:
+        destinationContentId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: destination_content_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+        description:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+        locationDesc:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: location_desc
+        metaTitle:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+            column: meta_title
+        metaDescription:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+            column: meta_description
+        metaKeyword:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+            column: meta_keyword
+        address:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+        city:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+        province:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+        country:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+        lan:
+            type: string
+            nullable: false
+            length: 2
+            fixed: false
+            comment: ''
+    manyToOne:
+        destination:
+            targetEntity: Destination
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                destination_id:
+                    referencedColumnName: destination_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

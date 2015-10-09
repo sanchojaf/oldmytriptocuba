@@ -1,0 +1,34 @@
+Mytrip\AdminBundle\Entity\Language:
+    type: entity
+    table: language
+    id:
+        languageId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: language_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        language:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        lanCode:
+            type: string
+            nullable: false
+            length: 2
+            fixed: false
+            comment: ''
+            column: lan_code
+        flag:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+    lifecycleCallbacks: {  }

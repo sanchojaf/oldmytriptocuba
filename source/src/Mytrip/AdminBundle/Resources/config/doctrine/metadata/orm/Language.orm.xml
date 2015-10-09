@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Language" table="language">
+    <id name="languageId" type="integer" column="language_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="language" type="string" column="language" length="50" nullable="false"/>
+    <field name="lanCode" type="string" column="lan_code" length="2" nullable="false"/>
+  </entity>
+</doctrine-mapping>

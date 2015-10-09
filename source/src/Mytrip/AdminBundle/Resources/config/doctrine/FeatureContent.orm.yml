@@ -1,0 +1,41 @@
+Mytrip\AdminBundle\Entity\FeatureContent:
+    type: entity
+    table: feature_content
+    indexes:
+        feature_id:
+            columns:
+                - feature_id
+    id:
+        featureContentId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: feature_content_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        feature:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        lan:
+            type: string
+            nullable: false
+            length: 2
+            fixed: false
+            comment: ''
+    manyToOne:
+        feature2:
+            targetEntity: Feature
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                feature_id:
+                    referencedColumnName: feature_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

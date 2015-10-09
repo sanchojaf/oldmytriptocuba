@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="BookingPrice" table="booking_price">
+    <indexes>
+      <index name="booking_id" columns="booking_id"/>
+    </indexes>
+    <id name="bookingPriceId" type="integer" column="booking_price_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="roomPrice" type="float" column="room_price" precision="8" scale="2" nullable="false"/>
+    <field name="totalPrice" type="float" column="total_price" precision="8" scale="2" nullable="false"/>
+    <field name="defaultCurrency" type="string" column="default_currency" length="3" nullable="false"/>
+    <field name="conversionRate" type="float" column="conversion_rate" precision="8" scale="2" nullable="false"/>
+    <field name="conversionPrice" type="float" column="conversion_price" precision="8" scale="2" nullable="false"/>
+    <field name="conversionCurrency" type="string" column="conversion_currency" length="3" nullable="false"/>
+    <many-to-one field="booking" target-entity="Booking">
+      <join-columns>
+        <join-column name="booking_id" referenced-column-name="booking_id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

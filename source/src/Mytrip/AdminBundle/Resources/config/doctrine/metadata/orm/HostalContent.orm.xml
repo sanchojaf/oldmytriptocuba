@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="HostalContent" table="hostal_content">
+    <indexes>
+      <index name="hostal_id" columns="hostal_id"/>
+    </indexes>
+    <id name="hostalContentId" type="integer" column="hostal_content_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="150" nullable="false"/>
+    <field name="ownerName" type="string" column="owner_name" length="150" nullable="false"/>
+    <field name="description" type="text" column="description" nullable="false"/>
+    <field name="smallDesc" type="text" column="small_desc" nullable="false"/>
+    <field name="locationDesc" type="text" column="location_desc" nullable="false"/>
+    <field name="address" type="string" column="address" length="150" nullable="false"/>
+    <field name="city" type="string" column="city" length="255" nullable="false"/>
+    <field name="province" type="integer" column="province" nullable="false"/>
+    <field name="country" type="integer" column="country" nullable="false"/>
+    <field name="lan" type="string" column="lan" length="2" nullable="false"/>
+    <many-to-one field="hostal" target-entity="Hostal">
+      <join-columns>
+        <join-column name="hostal_id" referenced-column-name="hostal_id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

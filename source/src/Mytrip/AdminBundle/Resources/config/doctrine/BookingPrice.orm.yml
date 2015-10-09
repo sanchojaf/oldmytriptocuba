@@ -1,0 +1,91 @@
+Mytrip\AdminBundle\Entity\BookingPrice:
+    type: entity
+    table: booking_price
+    indexes:
+        booking_id:
+            columns:
+                - booking_id
+    id:
+        bookingPriceId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: booking_price_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        paymenttype:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            comment: ''
+        totalPrice:
+            type: float
+            nullable: false
+            precision: 8
+            scale: 2
+            comment: 'total price on default currency'
+            column: total_price
+        reservationPrice:
+            type: float
+            nullable: true
+            precision: 8
+            scale: 2
+            comment: 'Booking payment'
+            column: reservation_price
+        reservationCharge:
+            type: float
+            nullable: true
+            precision: 8
+            scale: 2
+            comment: 'site fee'
+            column: reservation_charge
+        reservationTotalPrice:
+            type: float
+            nullable: true
+            precision: 8
+            scale: 2
+            comment: 'total booking payment'
+            column: reservation_total_price
+        defaultCurrency:
+            type: string
+            nullable: false
+            length: 3
+            fixed: false
+            comment: ''
+            column: default_currency
+        conversionRate:
+            type: float
+            nullable: false
+            precision: 8
+            scale: 2
+            comment: ''
+            column: conversion_rate
+        conversionPrice:
+            type: float
+            nullable: false
+            precision: 8
+            scale: 2
+            comment: ''
+            column: conversion_price
+        conversionCurrency:
+            type: string
+            nullable: false
+            length: 3
+            fixed: false
+            comment: ''
+            column: conversion_currency
+    manyToOne:
+        booking:
+            targetEntity: Booking
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                booking_id:
+                    referencedColumnName: booking_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

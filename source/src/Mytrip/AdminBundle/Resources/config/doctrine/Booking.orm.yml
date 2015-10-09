@@ -1,0 +1,113 @@
+Mytrip\AdminBundle\Entity\Booking:
+    type: entity
+    table: booking
+    indexes:
+        # room_id:
+        #     columns:
+        #         - room_id
+        hostal_id:
+            columns:
+                - hostal_id
+        user_id:
+            columns:
+                - user_id
+    id:
+        bookingId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: booking_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        fromDate:
+            type: date
+            nullable: false
+            comment: ''
+            column: from_date
+        toDate:
+            type: date
+            nullable: false
+            comment: ''
+            column: to_date
+        noOfDays:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: no_of_days
+        noOfRooms:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: no_of_rooms
+        guests:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+        adults:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+        child:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+        createdDate:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: CURRENT_TIMESTAMP
+            column: created_date
+        status:
+            type: string
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+    manyToOne:
+        hostal:
+            targetEntity: Hostal
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                hostal_id:
+                    referencedColumnName: hostal_id
+            orphanRemoval: false
+        # room:
+        #     targetEntity: HostalRooms
+        #     cascade: {  }
+        #     mappedBy: null
+        #     inversedBy: null
+        #     joinColumns:
+        #         room_id:
+        #             referencedColumnName: room_id
+        #     orphanRemoval: false
+        user:
+            targetEntity: User
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                user_id:
+                    referencedColumnName: user_id
+            orphanRemoval: false  
+    manyToMany:
+        rooms:
+            targetEntity: HostalRooms
+            joinTable:
+                name: booking_hostalrooms
+                joinColumns:
+                    booking_id:
+                        referencedColumnName: booking_id
+                inverseJoinColumns:
+                    hostalrooms_id:
+                        referencedColumnName: room_id
+    lifecycleCallbacks: {  }

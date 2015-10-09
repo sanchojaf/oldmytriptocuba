@@ -1,0 +1,113 @@
+Mytrip\AdminBundle\Entity\HostalContent:
+    type: entity
+    table: hostal_content
+    indexes:
+        hostal_id:
+            columns:
+                - hostal_id
+    id:
+        hostalContentId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: hostal_content_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+        ownerName:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+            column: owner_name
+        description:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+        smallDesc:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: small_desc
+        locationDesc:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: location_desc
+        metaTitle:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+            column: meta_title
+        metaDescription:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+            column: meta_description
+        metaKeyword:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+            column: meta_keyword
+        address:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+        city:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+        province:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+        country:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+        lan:
+            type: string
+            nullable: false
+            length: 2
+            fixed: false
+            comment: ''
+    manyToOne:
+        hostal:
+            targetEntity: Hostal
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                hostal_id:
+                    referencedColumnName: hostal_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

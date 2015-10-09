@@ -1,0 +1,42 @@
+services:
+    amazon_storage:
+        class: AmazonS3
+        arguments:
+            options:
+                key:      YOUR_KEY
+                secret:   YOUR_SECRET
+
+    acme.liip_imagine.binary.loader.stream.property_images:
+        class: "%liip_imagine.binary.loader.stream.class%"
+        arguments:
+            - 'gaufrette://images/'
+        tags:
+            - { name: 'liip_imagine.binary.loader', loader: 'stream.property_images' }
+
+    acme.imagine.cache.resolver.amazon_s3:
+            class: Liip\ImagineBundle\Imagine\Cache\Resolver\AmazonS3Resolver
+            arguments:
+                - @amazon_storage
+                - BUCKETNAME
+            tags:
+                - { name: 'liip_imagine.cache.resolver', resolver: 'resolver.amazon_s3' }
+
+#Liip Imagine Configuration
+liip_imagine:
+  driver: gd
+  data_loader: stream.property_images
+  cache: resolver.amazon_s3
+  filter_sets:      ~
+      
+#Gaufrette config      
+knp_gaufrette:
+    adapters:
+        images_adapter:
+            amazon_s3:
+                amazon_s3_id:   amazon_storage
+                bucket_name:    BUCKET_NAME
+                options:
+                    directory:  images
+    filesystems:
+        property_images:
+            adapter: images_adapter

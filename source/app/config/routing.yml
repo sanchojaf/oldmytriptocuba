@@ -1,0 +1,35 @@
+mytrip_admin:
+    resource: "@MytripAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+mytrip_payment:
+    resource: "@MytripPaymentBundle/Resources/config/routing.yml"
+    prefix:   /
+payum_capture:
+    resource: "@PayumBundle/Resources/config/routing/capture.xml"
+    prefix:   /
+    
+payum_sync:
+    resource: "@PayumBundle/Resources/config/routing/sync.xml"
+    prefix:   /
+    
+payum_notify:
+    resource: "@PayumBundle/Resources/config/routing/notify.xml"
+    prefix:   /
+
+#mytrip_paypal_express_checkout:
+    #resource: "@MytripPaypalExpressCheckoutBundle/Resources/config/routing.yml"
+    #prefix:   /
+
+#mytrip_stripe:
+    #resource: "@MytripStripeBundle/Resources/config/routing.yml"
+    #prefix:   /
+
+
+mytrip_user:
+    resource: "@MytripUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+#_liip_imagine:
+#    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+
+

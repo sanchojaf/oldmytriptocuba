@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="payum.class">Payum\Bundle\PayumBundle\Registry\ContainerAwareRegistry</parameter>
+        <parameter key="payum.payment.class">Payum\Core\Payment</parameter>
+        <parameter key="payum.extension.log_executed_actions.class">Payum\Core\Bridge\Psr\Log\LogExecutedActionsExtension</parameter>
+        <parameter key="payum.extension.logger.class">Payum\Core\Bridge\Psr\Log\LoggerExtension</parameter>
+        <parameter key="payum.extension.storage.class">Payum\Core\Extension\StorageExtension</parameter>
+        <parameter key="payum.extension.endless_cycle_detector.class">Payum\Core\Extension\EndlessCycleDetectorExtension</parameter>
+        <parameter key="payum.buzz.client.class">Buzz\Client\Curl</parameter>
+        <parameter key="payum.listener.interactive_request.class">Payum\Bundle\PayumBundle\EventListener\InteractiveRequestListener</parameter>
+
+        <parameter key="payum.action.execute_same_request_with_model_details.class">Payum\Core\Action\ExecuteSameRequestWithModelDetailsAction</parameter>
+        <parameter key="payum.action.get_http_request.class">Payum\Core\Bridge\Symfony\Action\GetHttpRequestAction</parameter>
+        <parameter key="payum.action.obtain_credit_card.class">Payum\Bundle\PayumBundle\Action\ObtainCreditCardAction</parameter>
+        <parameter key="payum.action.render_template.class">Payum\Core\Bridge\Twig\Action\RenderTemplateAction</parameter>
+
+        <parameter key="payum.security.http_request_verifier.class">Payum\Bundle\PayumBundle\Security\HttpRequestVerifier</parameter>
+        <parameter key="payum.security.token_factory.class">Payum\Bundle\PayumBundle\Security\TokenFactory</parameter>
+
+        <parameter key="payum.template.layout">@PayumCore\layout.html.twig</parameter>
+        <parameter key="payum.template.obtain_credit_card">PayumBundle:Action:obtainCreditCard.html.twig</parameter>
+    </parameters>
+
+    <services>
+        <service id="payum" class="%payum.class%">
+            <argument type="collection" /> <!-- payments services. this should be replaced while container is built -->
+            <argument type="collection" /> <!-- storages services. this should be replaced while container is built -->
+            <argument /> <!-- payment default name. this should be replaced while container is built -->
+
+            <call method="setContainer">
+                <argument type="service" id="service_container" />
+            </call>
+        </service>
+        
+        <service id="payum.buzz.client" class="%payum.buzz.client.class%">
+            <call method="setTimeout">
+                <argument>200</argument>
+            </call>
+        </service>
+
+        <service
+            id="payum.extension.endless_cycle_detector"
+            class="%payum.extension.endless_cycle_detector.class%"
+            public="false"
+        />
+
+        <service 
+            id="payum.extension.storage.prototype" 
+            class="%payum.extension.storage.class%"
+            abstract="true"
+            public="false"
+        >
+            <argument/> <!-- this should be replaced with real storage service -->
+        </service>
+
+        <service
+            id="payum.extension.log_executed_actions"
+            class="%payum.extension.log_executed_actions.class%"
+        >
+            <argument type="service" id="logger" on-invalid="ignore" />
+        </service>
+
+        <service
+            id="payum.extension.logger"
+            class="%payum.extension.logger.class%"
+        >
+            <argument type="service" id="logger" on-invalid="ignore" />
+        </service>
+
+        <service id="payum.listener.interactive_request" class="%payum.listener.interactive_request.class%">
+            <tag name="kernel.event_listener" event="kernel.exception" method="onKernelException" priority="128" />
+        </service>
+
+        <service 
+            id="payum.action.execute_same_request_with_model_details"
+            class="%payum.action.execute_same_request_with_model_details.class%"
+            public="false"
+        >
+            <tag name="payum.action" all="true" />
+        </service>
+
+        <service
+            id="payum.action.get_http_request"
+            class="%payum.action.get_http_request.class%"
+            public="false"
+        >
+            <call method="setHttpRequest">
+                <argument type="service" id="request" on-invalid="null" strict="false" />
+            </call>
+
+            <tag name="payum.action" all="true" />
+        </service>
+
+        <service id="payum.action.obtain_credit_card" class="%payum.action.obtain_credit_card.class%" public="false">
+            <argument type="service" id="form.factory" />
+            <argument>%payum.template.obtain_credit_card%</argument>
+            <call method="setRequest">
+                <argument type="service" id="request" on-invalid="null" strict="false" />
+            </call>
+        </service>
+
+        <service
+            id="payum.action.render_template"
+            class="%payum.action.render_template.class%"
+            public="false"
+        >
+            <argument type="service" id="twig" />
+            <argument>%payum.template.layout%</argument>
+            <tag name="payum.action" all="true" />
+        </service>
+
+        <!-- Should be replaced by PayumExtension -->
+        <service id="payum.security.token_storage" abstract="true" />
+
+        <service
+            id="payum.security.http_request_verifier"
+            class="%payum.security.http_request_verifier.class%"
+        >
+            <argument type="service" id="payum.security.token_storage" />
+        </service>
+
+        <service
+            id="payum.security.token_factory"
+            class="%payum.security.token_factory.class%"
+        >
+            <argument type="service" id="router" />
+            <argument type="service" id="payum.security.token_storage" />
+            <argument type="service" id="payum" />
+            <argument>payum_capture_do</argument>
+            <argument>payum_notify_do</argument>
+        </service>
+
+        <service id="payum.form.type.credit_card_expiration_date" class="Payum\Bundle\PayumBundle\Form\Type\CreditCardExpirationDateType">
+            <tag name="form.type" alias="payum_credit_card_expiration_date" />
+        </service>
+
+        <service id="payum.form.type.credit_card" class="Payum\Bundle\PayumBundle\Form\Type\CreditCardType">
+            <tag name="form.type" alias="payum_credit_card" />
+        </service>
+    </services>
+</container>

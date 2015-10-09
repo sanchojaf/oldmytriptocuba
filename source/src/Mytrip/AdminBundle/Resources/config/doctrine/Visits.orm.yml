@@ -1,0 +1,38 @@
+Mytrip\AdminBundle\Entity\Visits:
+    type: entity
+    table: visits
+    id:
+        visitId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: visit_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        visitType:
+            type: string
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: visit_type
+        typeId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: 'story, Desitination and Hostal id'
+            column: type_id
+        visitDate:
+            type: date
+            nullable: false
+            comment: ''
+            column: visit_date
+        count:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+    lifecycleCallbacks: {  }

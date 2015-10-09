@@ -1,0 +1,25 @@
+Mytrip\AdminBundle\Entity\CancelDefault:
+    type: entity
+    table: cancel_default
+    id:
+        cancelId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: cancel_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        days:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+        percentage:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+    lifecycleCallbacks: {  }

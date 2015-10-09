@@ -1,0 +1,47 @@
+Mytrip\AdminBundle\Entity\PaymentSecurityToken:
+    type: entity
+    table: payment_security_token1
+    id:
+        token:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        details:
+            type: object
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+        afterUrl:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+            column: after_url
+        targetUrl:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: target_url
+        paymentName:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: payment_name
+        hash:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+    lifecycleCallbacks: {  }

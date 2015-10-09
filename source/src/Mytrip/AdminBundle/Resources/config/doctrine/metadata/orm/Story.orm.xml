@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Story" table="story">
+    <indexes>
+      <index name="hid" columns="hostal_id"/>
+    </indexes>
+    <id name="storyId" type="integer" column="story_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="50" nullable="false"/>
+    <field name="createdDate" type="datetime" column="created_date" nullable="false"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+    <field name="image" type="string" column="image" length="255" nullable="false"/>
+    <many-to-one field="hostal" target-entity="Hostal">
+      <join-columns>
+        <join-column name="hostal_id" referenced-column-name="hostal_id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

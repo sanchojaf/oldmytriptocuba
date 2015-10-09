@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="EmailList" table="email_list">
+    <id name="emailListId" type="integer" column="email_list_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="title" type="string" column="title" length="100" nullable="false"/>
+    <field name="label" type="text" column="label" nullable="false"/>
+    <field name="fromname" type="string" column="fromname" length="100" nullable="false"/>
+    <field name="fromemail" type="string" column="fromemail" length="255" nullable="false"/>
+    <field name="tomail" type="string" column="tomail" length="255" nullable="true"/>
+    <field name="ccmail" type="text" column="ccmail" nullable="true"/>
+  </entity>
+</doctrine-mapping>

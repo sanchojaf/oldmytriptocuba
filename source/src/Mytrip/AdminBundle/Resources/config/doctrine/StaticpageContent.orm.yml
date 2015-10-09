@@ -1,0 +1,68 @@
+Mytrip\AdminBundle\Entity\StaticpageContent:
+    type: entity
+    table: staticpage_content
+    indexes:
+        staticpage_id:
+            columns:
+                - staticpage_id
+    id:
+        staticpageContentId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: staticpage_content_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        pageTitle:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+            column: page_title
+        metaDescription:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+            column: meta_description
+        metaKeyword:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+            column: meta_keyword
+        content:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+        lan:
+            type: string
+            nullable: false
+            length: 2
+            fixed: false
+            comment: ''
+    manyToOne:
+        staticpage:
+            targetEntity: Staticpage
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                staticpage_id:
+                    referencedColumnName: staticpage_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

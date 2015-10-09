@@ -1,0 +1,28 @@
+Mytrip\AdminBundle\Entity\ApiGateway:
+    type: entity
+    table: api_gateway
+    id:
+        apiId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: api_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        gateway:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+        status:
+            type: string
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            default: Active
+    lifecycleCallbacks: {  }

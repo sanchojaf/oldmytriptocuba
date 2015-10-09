@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Banner" table="banner">
+    <id name="bannerId" type="integer" column="banner_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="bannerType" type="string" column="banner_type" nullable="false"/>
+    <field name="image" type="string" column="image" length="150" nullable="false"/>
+    <field name="typeId" type="integer" column="type_id" nullable="false"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+  </entity>
+</doctrine-mapping>

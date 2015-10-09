@@ -1,0 +1,41 @@
+Mytrip\AdminBundle\Entity\Banner:
+    type: entity
+    table: banner
+    id:
+        bannerId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: banner_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        bannerType:
+            type: string
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: banner_type
+        image:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+        typeId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: type_id
+        status:
+            type: string
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            default: Active
+    lifecycleCallbacks: {  }

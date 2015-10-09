@@ -1,0 +1,72 @@
+Mytrip\AdminBundle\Entity\Review:
+    type: entity
+    table: review
+    indexes:
+        user_id:
+            columns:
+                - user_id
+    id:
+        reviewId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: review_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        reviewType:
+            type: string
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: review_type
+        typeId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: 'Destination, Hostal and Story id'
+            column: type_id
+        rating:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+        review:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+        lan:
+            type: string
+            nullable: false
+            length: 2
+            fixed: false
+            comment: ''
+        createdDate:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: CURRENT_TIMESTAMP
+            column: created_date
+        status:
+            type: string
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            default: Active
+    manyToOne:
+        user:
+            targetEntity: User
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                user_id:
+                    referencedColumnName: user_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

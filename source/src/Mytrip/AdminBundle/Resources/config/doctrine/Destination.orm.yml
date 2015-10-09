@@ -1,0 +1,95 @@
+Mytrip\AdminBundle\Entity\Destination:
+    type: entity
+    table: destination
+    indexes:
+        country:
+            columns:
+                - country
+        province:
+            columns:
+                - province
+    id:
+        destinationId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: destination_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        url:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+        video:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+        tripadvisor:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+        latitude:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+        longitude:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+        createdDate:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: CURRENT_TIMESTAMP
+            column: created_date
+        modifyDate:
+            type: datetime
+            nullable: false
+            comment: ''
+            column: modify_date
+        status:
+            type: string
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            default: Active
+    manyToOne:
+        country:
+            targetEntity: Country
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                country:
+                    referencedColumnName: cid
+            orphanRemoval: false
+        province:
+            targetEntity: States
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                province:
+                    referencedColumnName: sid
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

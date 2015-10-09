@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Feature" table="feature">
+    <id name="featureId" type="integer" column="feature_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="feature" type="string" column="feature" length="50" nullable="false"/>
+    <field name="icon" type="string" column="icon" length="150" nullable="true"/>
+    <field name="createdDate" type="datetime" column="created_date" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,69 @@
+Mytrip\AdminBundle\Entity\Staticpage:
+    type: entity
+    table: staticpage
+    id:
+        staticpageId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: staticpage_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        pagename:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        seo:
+            type: string
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            default: Yes
+        content:
+            type: string
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            default: Yes
+        url:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+        createdDate:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: CURRENT_TIMESTAMP
+            column: created_date
+        mainMenu:
+            type: string
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            default: Yes
+            column: main_menu
+        menuId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: 'Main menu id 4 showing sub menu'
+            default: '0'
+            column: menu_id
+        status:
+            type: string
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            default: Active
+    lifecycleCallbacks: {  }

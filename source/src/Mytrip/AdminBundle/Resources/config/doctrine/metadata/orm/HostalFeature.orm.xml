@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="HostalFeature" table="hostal_feature">
+    <indexes>
+      <index name="hostal_id" columns="hostal_id"/>
+      <index name="feature_id" columns="feature_id"/>
+    </indexes>
+    <id name="hostalFeatureId" type="integer" column="hostal_feature_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="createdDate" type="datetime" column="created_date" nullable="false"/>
+    <many-to-one field="feature" target-entity="Feature">
+      <join-columns>
+        <join-column name="feature_id" referenced-column-name="feature_id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="hostal" target-entity="Hostal">
+      <join-columns>
+        <join-column name="hostal_id" referenced-column-name="hostal_id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

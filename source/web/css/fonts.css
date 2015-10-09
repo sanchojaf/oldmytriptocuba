@@ -1,0 +1,75 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face {
+ font-family: 'yanone_kaffeesatzbold';
+ src: url('../fonts/yanonekaffeesatz-bold-webfont.eot');
+ src: url('../fonts/yanonekaffeesatz-bold-webfont.eot?#iefix') format('embedded-opentype'),  url('../fonts/yanonekaffeesatz-bold-webfont.woff') format('woff'),  url('../fonts/yanonekaffeesatz-bold-webfont.ttf') format('truetype'),  url('../fonts/yanonekaffeesatz-bold-webfont.svg#yanone_kaffeesatzbold') format('svg');
+ font-weight: normal;
+ font-style: normal;
+}
+ @font-face {
+ font-family: 'yanone_kaffeesatzlight';
+ src: url('../fonts/yanonekaffeesatz-light-webfont.eot');
+ src: url('../fonts/yanonekaffeesatz-light-webfont.eot?#iefix') format('embedded-opentype'),  url('../fonts/yanonekaffeesatz-light-webfont.woff') format('woff'),  url('../fonts/yanonekaffeesatz-light-webfont.ttf') format('truetype'),  url('../fonts/yanonekaffeesatz-light-webfont.svg#yanone_kaffeesatzlight') format('svg');
+ font-weight: normal;
+ font-style: normal;
+}
+ @font-face {
+ font-family: 'yanone_kaffeesatzregular';
+ src: url('../fonts/yanonekaffeesatz-regular-webfont.eot');
+ src: url('../fonts/yanonekaffeesatz-regular-webfont.eot?#iefix') format('embedded-opentype'),  url('../fonts/yanonekaffeesatz-regular-webfont.woff') format('woff'),  url('../fonts/yanonekaffeesatz-regular-webfont.ttf') format('truetype'),  url('../fonts/yanonekaffeesatz-regular-webfont.svg#yanone_kaffeesatzregular') format('svg');
+ font-weight: normal;
+ font-style: normal;
+}
+ @font-face {
+ font-family: 'yanone_kaffeesatzthin';
+ src: url('../fonts/yanonekaffeesatz-thin-webfont.eot');
+ src: url('../fonts/yanonekaffeesatz-thin-webfont.eot?#iefix') format('embedded-opentype'),  url('../fonts/yanonekaffeesatz-thin-webfont.woff') format('woff'),  url('../fonts/yanonekaffeesatz-thin-webfont.ttf') format('truetype'),  url('../fonts/yanonekaffeesatz-thin-webfont.svg#yanone_kaffeesatzthin') format('svg');
+ font-weight: normal;
+ font-style: normal;
+}
+.pagination {
+    border-bottom: 3px dotted #439e9b;
+    clear: both;
+    margin: 0 0 30px;
+    padding-bottom: 28px;
+    text-align: center;
+    word-spacing: -1em;
+}
+.pagination li {
+	display: inline-block;
+	list-style: none;
+	font: bold 12px/13px Arial, Helvetica, sans-serif;
+	padding: 5px 9px;
+	color: #999;
+	background: none;
+	word-spacing: normal;
+	margin: 0 1px;
+}
+.pagination li.first {
+	margin-right: 10px;
+}
+.pagination li.last {
+	margin-left: 10px;
+}
+.pagination li.current {
+	border:1px solid #5caca9;
+	color: #5caca9;
+}
+.pagination li a {
+	display: inline-block;
+	padding: 10px 15px;
+	margin: -5px -9px;
+	text-decoration: none;
+}
+.pagination li a, .pagination li a:link, .pagination li a:visited, .pagination li a:active {
+	border:1px solid #bbbbbb;
+	color: #666;
+}
+.pagination li a:hover, .pagination li a:focus {
+	border:1px solid #666;
+}
+.pagination li, .pagination li a {
+	padding: 10px 15px;
+	
+}

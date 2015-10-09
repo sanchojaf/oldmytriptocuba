@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="FeatureContent" table="feature_content">
+    <indexes>
+      <index name="feature_id" columns="feature_id"/>
+    </indexes>
+    <id name="featureContentId" type="integer" column="feature_content_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="feature" type="string" column="feature" length="50" nullable="false"/>
+    <field name="lan" type="string" column="lan" length="2" nullable="false"/>
+    <many-to-one field="feature2" target-entity="Feature">
+      <join-columns>
+        <join-column name="feature_id" referenced-column-name="feature_id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

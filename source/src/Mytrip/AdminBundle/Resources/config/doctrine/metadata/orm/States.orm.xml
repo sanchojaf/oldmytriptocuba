@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="States" table="states">
+    <id name="sid" type="integer" column="sid">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="cid" type="integer" column="cid" nullable="false"/>
+    <field name="state" type="string" column="state" length="150" nullable="false"/>
+    <field name="code" type="string" column="code" length="150" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    #RewriteCond %{HTTP_HOST} ^meema-selects.com$ [NC]
+	#RewriteRule ^(.*)$ http://www.meema-selects.com/$1 [L,R=301]
+		
+    #RewriteRule    ^$ /web/    [L]
+   # RewriteRule    (.*) /web/$1 [L]
+</IfModule>
+
+
+

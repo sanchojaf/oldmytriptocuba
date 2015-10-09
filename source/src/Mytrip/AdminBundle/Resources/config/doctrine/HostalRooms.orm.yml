@@ -1,0 +1,56 @@
+Mytrip\AdminBundle\Entity\HostalRooms:
+    type: entity
+    table: hostal_rooms
+    indexes:
+        hostal_id:
+            columns:
+                - hostal_id
+    id:
+        roomId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: room_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        roomtype:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+        guests:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+        adults:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+        child:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+        price:
+            type: float
+            nullable: false
+            precision: 8
+            scale: 2
+            comment: ''
+    manyToOne:
+        hostal:
+            targetEntity: Hostal
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                hostal_id:
+                    referencedColumnName: hostal_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

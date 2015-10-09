@@ -1,0 +1,39 @@
+Mytrip\AdminBundle\Entity\HostalCancelDetails:
+    type: entity
+    table: hostal_cancel_details
+    indexes:
+        hostal:
+            columns:
+                - hostal
+    id:
+        hostalCancelId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: hostal_cancel_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        days:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+        percentage:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+    manyToOne:
+        hostal:
+            targetEntity: Hostal
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                hostal:
+                    referencedColumnName: hostal_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

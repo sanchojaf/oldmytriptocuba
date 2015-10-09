@@ -1,0 +1,51 @@
+mytrip_payment_homepage:
+    pattern:  /payments
+    defaults: { _controller: MytripPaymentBundle:Default:index }
+
+mytrip_payment_prepare_simple_purchase_authorize_net:
+    pattern:  /payment/simple_purchase/authorize_net/prepare
+    defaults: { _controller: MytripPaymentBundle:SimplePurchaseAuthorizeNetAim:prepare }
+
+mytrip_payment_prepare_obtain_credit_card_authorize_net:
+    pattern:  /payment/simple_purchase/authorize_net/prepare-obtain-credit-card
+    defaults: { _controller: MytripPaymentBundle:SimplePurchaseAuthorizeNetAim:prepareObtainCreditCard }
+    
+mytrip_payment_prepare_simple_purchase_be2bill:
+    pattern:  /payment/simple_purchase/be2bill/prepare
+    defaults: { _controller: MytripPaymentBundle:SimplePurchaseBe2Bill:prepare }
+
+mytrip_payment_prepare_obtain_credit_card_be2bill:
+    pattern:  /payment/simple_purchase/be2bill/prepare-obtain-credit-card
+    defaults: { _controller: MytripPaymentBundle:SimplePurchaseBe2Bill:prepareObtainCreditCard }
+
+mytrip_payment_prepare_simple_purchase_be2bill_onsite:
+    pattern:  /payment/simple_purchase/be2bill/prepare_onsite
+    defaults: { _controller: MytripPaymentBundle:SimplePurchaseBe2Bill:prepareOnsite }
+
+mytrip_payment_prepare_simple_purchase_offline:
+    pattern:  /payment/simple_purchase/offline/prepare
+    defaults: { _controller: MytripPaymentBundle:SimplePurchaseOffline:prepare }
+    
+mytrip_payment_prepare_simple_purchase_paypal_express_via_omnipay:
+    pattern:  /payment/simple_purchase/paypal_express_via_omnipay/prepare
+    defaults: { _controller: MytripPaymentBundle:SimplePurchasePaypalExpressViaOmnipay:prepare }
+
+mytrip_payment_prepare_simple_purchase_stripe_via_omnipay:
+    pattern:  /payment/simple_purchase/stripe_via_omnipay/prepare
+    defaults: { _controller: MytripPaymentBundle:SimplePurchaseStripeViaOmnipay:prepare }
+
+mytrip_payment_prepare_simple_purchase_paypal_pro:
+    pattern:  /payment/simple_purchase/paypal_express_pro/prepare
+    defaults: { _controller: MytripPaymentBundle:SimplePurchasePaypalPro:prepare }
+
+mytrip_payment_prepare_obtain_credit_card_paypal_pro:
+    pattern:  /payment/simple_purchase/paypal_express_pro/prepare-obtain-credit-card
+    defaults: { _controller: MytripPaymentBundle:SimplePurchasePaypalPro:prepareObtainCreditCard }
+
+mytrip_payment_details_view:
+    pattern:  /payment/details
+    defaults: { _controller: MytripPaymentBundle:Details:view }
+    
+mytrip_payment_notifications_list:
+    pattern:  /payment/notifications/list
+    defaults: { _controller: MytripPaymentBundle:Notifications:list }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Visits" table="visits">
+    <id name="visitId" type="integer" column="visit_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="visitType" type="string" column="visit_type" nullable="false"/>
+    <field name="typeId" type="integer" column="type_id" nullable="false"/>
+    <field name="visitDate" type="date" column="visit_date" nullable="false"/>
+    <field name="count" type="integer" column="count" nullable="false"/>
+  </entity>
+</doctrine-mapping>

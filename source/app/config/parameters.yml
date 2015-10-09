@@ -1,0 +1,66 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_mysql
+    database_host: localhost
+    database_port: null
+    database_name: mytrip172
+    database_user: prod_app_user
+    database_password: mypasswd
+    #database_host: localhost
+    #database_port: null
+    #database_name: mytrip
+    #database_user: myvenda
+    #database_password: !@#Myvenda123
+    mailer_transport: mail
+    mailer_host: localhost
+    #mailer_user: null
+    #mailer_password: null
+    locale: en
+    default_format:	Y-m-d
+    detailed_format:	Y-m-d H:i:s
+    secret: LTShanMytripcuba
+    
+    paypal.express_checkout.username:  venacuba.com_api1.gmail.com
+    paypal.express_checkout.password:  DKG3JZXPGY73TWFU
+    paypal.express_checkout.signature: AFcWxV21C7fd0v3bYYYRCpSSRl31AQFBC7PTxxQZc18W2uzycZgD.yB0
+    
+    stripe.secret_key:  sk_test_4XBo2MTTJ15VPqmBIc2wyS5U
+    stripe.publishable_key: pk_test_4XBoQQrmLdc8b3BHCKIUAomN
+    
+    beanstream.merchant_id_usd:  324160000
+    beanstream.username_usd: adminmytripcubas
+    beanstream.password_usd: tripofcuba12vend
+    
+    beanstream.merchant_id_cad:  300200798
+    beanstream.username_cad: adminmytripcubac
+    beanstream.password_cad: tripofcuba12vend
+    
+    default_format:  Y-m-d
+    detailed_format: Y-m-d H:i:s
+    
+    awsAccessKey: AKIAJJM2FRVKSKN5RCBQ
+    awsSecretKey: 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
+    amazon_bucket: mytriptucuba-dev
+    amazon_bucket_url: http://static-dev.venacuba.com/
+    
+    facebook_apikey: 781234718588895 
+    facebook_apisecretkey: 7db35e1e0f5eca498adffe6e3c6d23e6 
+    
+    twitter_apikey: cXMIpNMvkm8QGtBgZEo80wdRB
+    twitter_apisecretkey: 5OAEZqEULlSgVqDTSHB0gEH314IoIC5mnJMcHVAq2b960IkaEW
+    
+    google_apikey: 9897372377-nuc66hvudn9tb9ccts0llh28un3b1lln.apps.googleusercontent.com
+    google_apisecretkey: MHlNVjUWO6FbZex57S4rWokv
+    google_developerkey: AIzaSyCIeM0CDydaXO0lauylBeceU3Akg1oM7h8
+    google_product_name: VenaCuba
+
+    recaptcha_publickey: 6LdPG_wSAAAAAHebWy0NFjOERS9lekiqjvLOjAqS
+    recaptcha_priavatekey: 6LdPG_wSAAAAAKltfGD72OWg5vtiO2DkWvIufGRG
+
+    smsusername: venacuba.com@gmail.com
+    smspassword: Laperla2014
+
+    terminalid: 33001
+    secret: SandboxSecret001    
+    multicurrency: true
+    testaccount: true

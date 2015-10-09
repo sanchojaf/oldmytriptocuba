@@ -1,0 +1,115 @@
+/* Button*/
+.button {
+	border: 1px solid #222222;
+	background: #454545;
+}
+
+/* Footer*/
+#footer {
+    background: none repeat scroll 0 0 #222222;    overflow: hidden;
+    padding: 10px 20px;
+}
+.jqueryslidemenu{
+font: bold 12px Verdana;
+ background: url(../img/black-menu-bg.png)  repeat-x scroll 0 0 transparent;
+width: 100%;
+float:left;
+}
+
+.jqueryslidemenu ul{
+margin: 0;
+padding: 0;
+list-style-type: none;
+z-index:1;
+}
+
+/*Top level list items*/
+.jqueryslidemenu ul li{
+position: relative;
+display: inline;
+float: left;
+z-index:1000;
+padding:11px 25px;
+ background: url(../img/black-menu-bg.png)  repeat-x scroll 0 0 transparent;
+border-right: 1px solid #1f1e1e;/* changes for other theme */
+border-left: 1px solid #666666;/* changes for other theme */
+}
+
+/*Top level menu link items style*/
+.jqueryslidemenu ul li a{
+display: block;
+text-decoration: none;
+color: white;
+/*background:url(../imagesdss/menu-bg.png) repeat-x;*/
+}
+
+* html .jqueryslidemenu ul li a{ /*IE6 hack to get sub menu links to behave correctly*/
+display: inline-block;
+}
+
+.jqueryslidemenu ul li a:link, .jqueryslidemenu ul li a:visited,.jqueryslidemenu ul li a:hover li a{
+color: white;
+}
+
+.jqueryslidemenu ul li:hover, .jqueryslidemenu ul li.active{
+background: #222222; /*tab link background during hover state*//* changes for other theme */
+}
+	
+/*1st sub level menu*/
+.jqueryslidemenu ul li ul{
+position: absolute;
+left: 0;
+display: block;
+visibility: hidden;
+margin-left:-1px;
+}
+
+/*Sub level menu list items (undo style from Top level List Items)*/
+.jqueryslidemenu ul li ul li{
+	padding:0px 0px;
+display: list-item;
+float: none;
+}
+
+/*All subsequent sub menu levels vertical offset after 1st level sub menu */
+.jqueryslidemenu ul li ul li ul{
+top: 0;
+}
+
+/* Sub level menu links style */
+.jqueryslidemenu ul li ul li a{
+font: normal 13px Verdana;
+width: 160px; /*width of sub menus*/
+padding: 8px 20px;;
+margin: 0;
+}
+
+.jqueryslidemenuz ul li ul li a:hover{ /*sub menus hover style*/
+background: #eff9ff;
+color: black;
+}
+
+/* ######### CSS classes applied to down and right arrow images  ######### */
+
+.downarrowclass{
+position: absolute;
+    right: 7px;
+    top: 15px;
+	background:url(../img/down.gif) no-repeat;
+	width:11px;
+	height:8px;
+}
+
+.rightarrowclass{
+position: absolute;
+top: 6px;
+right: 5px;
+}
+
+/* ######### Menu Icons  ######### */
+/* .icon{
+	background:url(../images/house.png) 2px -4px no-repeat;
+	width:24px;
+	height:24px;
+	padding-left:28px;
+} */

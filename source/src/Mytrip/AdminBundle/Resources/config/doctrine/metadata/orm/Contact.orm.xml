@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Contact" table="contact">
+    <id name="contactId" type="integer" column="contact_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="50" nullable="false"/>
+    <field name="email" type="string" column="email" length="255" nullable="false"/>
+    <field name="phone" type="string" column="phone" length="50" nullable="false"/>
+    <field name="message" type="text" column="message" nullable="false"/>
+    <field name="view" type="string" column="view" nullable="false"/>
+    <field name="reply" type="string" column="reply" nullable="false"/>
+    <field name="replyMessage" type="text" column="reply_message" nullable="false"/>
+    <field name="replyDate" type="datetime" column="reply_date" nullable="false"/>
+    <field name="createdDate" type="datetime" column="created_date" nullable="false"/>
+    <field name="lan" type="string" column="lan" length="2" nullable="false"/>
+  </entity>
+</doctrine-mapping>

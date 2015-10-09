@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Country" table="country">
+    <id name="cid" type="integer" column="cid">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="country" type="string" column="country" length="100" nullable="false"/>
+    <field name="isocountry" type="string" column="isocountry" length="20" nullable="false"/>
+  </entity>
+</doctrine-mapping>

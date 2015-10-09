@@ -1,0 +1,51 @@
+Mytrip\AdminBundle\Entity\EmailList:
+    type: entity
+    table: email_list
+    id:
+        emailListId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: email_list_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        title:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+        label:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+        fromname:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            comment: ''
+        fromemail:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+        tomail:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+        ccmail:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+    lifecycleCallbacks: {  }

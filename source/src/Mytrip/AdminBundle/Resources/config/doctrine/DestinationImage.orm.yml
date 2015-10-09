@@ -1,0 +1,41 @@
+Mytrip\AdminBundle\Entity\DestinationImage:
+    type: entity
+    table: destination_image
+    indexes:
+        destination_id:
+            columns:
+                - destination_id
+    id:
+        destinationImageId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: destination_image_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        image:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+        createdDate:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: CURRENT_TIMESTAMP
+            column: created_date
+    manyToOne:
+        destination:
+            targetEntity: Destination
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                destination_id:
+                    referencedColumnName: destination_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

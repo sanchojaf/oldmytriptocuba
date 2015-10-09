@@ -1,0 +1,214 @@
+mytrip_admin_homepage:
+    pattern:  /admin/
+    defaults: { _controller: MytripAdminBundle:Default:index }
+mytrip_admin_dashboard:
+    pattern:  /admin/dashboard
+    defaults: { _controller: MytripAdminBundle:Default:dashboard }
+mytrip_admin_profile:
+    pattern:  /admin/profile
+    defaults: { _controller: MytripAdminBundle:Default:profile }
+mytrip_admin_changepassword:
+    pattern:  /admin/changepassword
+    defaults: { _controller: MytripAdminBundle:Default:changepassword }
+mytrip_admin_logout:
+    pattern:  /admin/logout
+    defaults: { _controller: MytripAdminBundle:Default:logout }
+mytrip_admin_adminusers:
+    pattern:  /admin/adminusers
+    defaults: { _controller: MytripAdminBundle:Default:adminusers }
+mytrip_admin_status:
+    pattern:  /admin/changestatus
+    defaults: { _controller: MytripAdminBundle:Default:changestatus }
+mytrip_admin_addadmin:
+    pattern:  /admin/addadmin
+    defaults: { _controller: MytripAdminBundle:Default:addadmin }
+mytrip_admin_editadmin:
+    pattern:  /admin/editadmin
+    defaults: { _controller: MytripAdminBundle:Default:editadmin }
+mytrip_admin_adminpassword:
+    pattern:  /admin/adminpassword
+    defaults: { _controller: MytripAdminBundle:Default:adminpassword }
+mytrip_admin_deleteadmin:
+    pattern:  /admin/deleteadmin
+    defaults: { _controller: MytripAdminBundle:Default:deleteadmin }
+mytrip_admin_api:
+    pattern:  /admin/api
+    defaults: { _controller: MytripAdminBundle:Default:api }
+mytrip_admin_addapi:
+    pattern:  /admin/addapi
+    defaults: { _controller: MytripAdminBundle:Default:addapi }
+mytrip_admin_editapi:
+    pattern:  /admin/editapi
+    defaults: { _controller: MytripAdminBundle:Default:editapi }
+mytrip_admin_staticpage:
+    pattern:  /admin/staticpage
+    defaults: { _controller: MytripAdminBundle:Default:staticpage }
+mytrip_admin_addstaticpage:
+    pattern:  /admin/addstaticpage
+    defaults: { _controller: MytripAdminBundle:Default:addstaticpage }
+mytrip_admin_editstaticpage:
+    pattern:  /admin/editstaticpage
+    defaults: { _controller: MytripAdminBundle:Default:editstaticpage }
+mytrip_admin_deletestaticpage:
+    pattern:  /admin/deletestaticpage
+    defaults: { _controller: MytripAdminBundle:Default:deletestaticpage }
+mytrip_admin_features:
+    pattern:  /admin/features
+    defaults: { _controller: MytripAdminBundle:Default:features }
+mytrip_admin_addfeature:
+    pattern:  /admin/addfeature
+    defaults: { _controller: MytripAdminBundle:Default:addfeature }
+mytrip_admin_editfeature:
+    pattern:  /admin/editfeature
+    defaults: { _controller: MytripAdminBundle:Default:editfeature }
+mytrip_admin_deletefeature:
+    pattern:  /admin/deletefeature
+    defaults: { _controller: MytripAdminBundle:Default:deletefeature }
+mytrip_admin_sociallinks:
+    pattern:  /admin/sociallinks
+    defaults: { _controller: MytripAdminBundle:Default:sociallinks }
+mytrip_admin_addsociallink:
+    pattern:  /admin/addsociallink
+    defaults: { _controller: MytripAdminBundle:Default:addsociallink }
+mytrip_admin_editsociallink:
+    pattern:  /admin/editsociallink
+    defaults: { _controller: MytripAdminBundle:Default:editsociallink }
+mytrip_admin_emailcontent:
+    pattern:  /admin/emailcontent
+    defaults: { _controller: MytripAdminBundle:Default:emailcontent }
+mytrip_admin_addemailcontent:
+    pattern:  /admin/addemailcontent
+    defaults: { _controller: MytripAdminBundle:Default:addemailcontent }
+mytrip_admin_editemailcontent:
+    pattern:  /admin/editemailcontent
+    defaults: { _controller: MytripAdminBundle:Default:editemailcontent }
+mytrip_admin_destination:
+    pattern:  /admin/destination
+    defaults: { _controller: MytripAdminBundle:Default:destination }
+mytrip_admin_adddestination:
+    pattern:  /admin/adddestination
+    defaults: { _controller: MytripAdminBundle:Default:adddestination }
+mytrip_admin_editdestination:
+    pattern:  /admin/editdestination
+    defaults: { _controller: MytripAdminBundle:Default:editdestination }
+mytrip_admin_deletedestination:
+    pattern:  /admin/deletedestination
+    defaults: { _controller: MytripAdminBundle:Default:deletedestination }
+mytrip_admin_getstate:
+    pattern:  /admin/getstate
+    defaults: { _controller: MytripAdminBundle:Default:getstate }
+mytrip_admin_banner:
+    pattern:  /admin/banner
+    defaults: { _controller: MytripAdminBundle:Default:banner }
+mytrip_admin_deletebanner:
+    pattern:  /admin/deletebanner
+    defaults: { _controller: MytripAdminBundle:Default:deletebanner }
+mytrip_admin_hostal:
+    pattern:  /admin/hostal
+    defaults: { _controller: MytripAdminBundle:Default:hostal }
+mytrip_admin_addhostal:
+    pattern:  /admin/addhostal
+    defaults: { _controller: MytripAdminBundle:Default:addhostal }
+mytrip_admin_edithostal:
+    pattern:  /admin/edithostal
+    defaults: { _controller: MytripAdminBundle:Default:edithostal }
+mytrip_admin_deletehostal:
+    pattern:  /admin/deletehostal
+    defaults: { _controller: MytripAdminBundle:Default:deletehostal }
+mytrip_admin_story:
+    pattern:  /admin/stories
+    defaults: { _controller: MytripAdminBundle:Default:stories }
+mytrip_admin_addstory:
+    pattern:  /admin/addstory
+    defaults: { _controller: MytripAdminBundle:Default:addstory }
+mytrip_admin_editstory:
+    pattern:  /admin/editstory
+    defaults: { _controller: MytripAdminBundle:Default:editstory }
+mytrip_admin_deletestory:
+    pattern:  /admin/deletestory
+    defaults: { _controller: MytripAdminBundle:Default:deletestory }
+mytrip_admin_contact:
+    pattern:  /admin/contact
+    defaults: { _controller: MytripAdminBundle:Default:contact }
+mytrip_admin_viewcontact:
+    pattern:  /admin/viewcontact
+    defaults: { _controller: MytripAdminBundle:Default:viewcontact }
+mytrip_admin_deletecontact:
+    pattern:  /admin/deletecontact
+    defaults: { _controller: MytripAdminBundle:Default:deletecontact }
+mytrip_admin_gethostal:
+    pattern:  /admin/gethostal
+    defaults: { _controller: MytripAdminBundle:Default:gethostal }
+mytrip_admin_topstory:
+    pattern:  /admin/topstory
+    defaults: { _controller: MytripAdminBundle:Default:topstory }
+mytrip_admin_comments:
+    pattern:  /admin/comments
+    defaults: { _controller: MytripAdminBundle:Default:comments }
+mytrip_admin_deletecomments:
+    pattern:  /admin/deletecomments
+    defaults: { _controller: MytripAdminBundle:Default:deletecomments }
+mytrip_admin_viewcomments:
+    pattern:  /admin/viewcomments
+    defaults: { _controller: MytripAdminBundle:Default:viewcomments	 }
+mytrip_admin_users:
+    pattern:  /admin/users
+    defaults: { _controller: MytripAdminBundle:Default:users }
+mytrip_admin_deleteusers:
+    pattern:  /admin/deleteusers
+    defaults: { _controller: MytripAdminBundle:Default:deleteusers }
+mytrip_admin_viewusers:
+    pattern:  /admin/viewusers
+    defaults: { _controller: MytripAdminBundle:Default:viewusers	 }
+mytrip_admin_confirm_booking:
+    pattern:  /admin/confirmbooking
+    defaults: { _controller: MytripAdminBundle:Default:confirmbooking }
+mytrip_admin_viewbooking:
+    pattern:  /admin/viewbooking
+    defaults: { _controller: MytripAdminBundle:Default:viewbooking }
+mytrip_admin_cancel_booking:
+    pattern:  /admin/cancelbooking
+    defaults: { _controller: MytripAdminBundle:Default:cancelbooking }
+mytrip_admin_settings:
+    pattern:  /admin/settings
+    defaults: { _controller: MytripAdminBundle:Default:settings }
+mytrip_admin_destinationhostals:
+    pattern:  /admin/destinationhostals
+    defaults: { _controller: MytripAdminBundle:Default:destinationhostals }
+mytrip_admin_destinationcomments:
+    pattern:  /admin/destinationcomments
+    defaults: { _controller: MytripAdminBundle:Default:destinationcomments }
+mytrip_admin_cancel_settings:
+    pattern:  /admin/cancelsettings
+    defaults: { _controller: MytripAdminBundle:Default:cancelsettings }
+mytrip_admin_add_cancel_setting:
+    pattern:  /admin/addcancelsettings
+    defaults: { _controller: MytripAdminBundle:Default:addcancelsettings }
+mytrip_admin_edit_cancel_settings:
+    pattern:  /admin/editcancelsettings
+    defaults: { _controller: MytripAdminBundle:Default:editcancelsettings }
+mytrip_admin_delete_cancel_settings:
+    pattern:  /admin/deletecancelsettings
+    defaults: { _controller: MytripAdminBundle:Default:deletecancelsettings }
+mytrip_admin_hostal_cancel:
+    pattern:  /admin/hostalcancelsettings
+    defaults: { _controller: MytripAdminBundle:Default:hostalcancelsettings }
+mytrip_admin_hostal_add_cancel_setting:
+    pattern:  /admin/hostaladdcancelsettings
+    defaults: { _controller: MytripAdminBundle:Default:hostaladdcancelsettings }
+mytrip_admin_hostal_edit_cancel_settings:
+    pattern:  /admin/hostaleditcancelsettings
+    defaults: { _controller: MytripAdminBundle:Default:hostaleditcancelsettings }
+mytrip_admin_hostal_delete_cancel_settings:
+    pattern:  /admin/hostaldeletecancelsettings
+    defaults: { _controller: MytripAdminBundle:Default:hostaldeletecancelsettings }
+mytrip_admin_payment_settings:
+    pattern:  /admin/paymentsettings
+    defaults: { _controller: MytripAdminBundle:Default:paymentsettings }
+mytrip_admin_language_text:
+    pattern:  /admin/languagetext
+    defaults: { _controller: MytripAdminBundle:Default:languagetext }
+
+mytrip_admin_editroom:
+    pattern:  /admin/editroom
+    defaults: { _controller: MytripAdminBundle:Default:editroom }

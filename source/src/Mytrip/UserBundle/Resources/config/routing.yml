@@ -1,0 +1,183 @@
+mytrip_user_homepage:
+    pattern:  /
+    defaults: { _controller: MytripUserBundle:Default:index }
+mytrip_user_aboutus:
+    pattern:  /aboutus
+    defaults: { _controller: MytripUserBundle:Default:aboutus}	
+mytrip_user_payment:
+    pattern:  /payment
+    defaults: { _controller: MytripUserBundle:Default:payment}	
+mytrip_user_faq:
+    pattern:  /faq
+    defaults: { _controller: MytripUserBundle:Default:faq}	
+mytrip_user_hospitality:
+    pattern:  /hospitality
+    defaults: { _controller: MytripUserBundle:Default:hospitality}	
+mytrip_user_help:
+    pattern:  /help
+    defaults: { _controller: MytripUserBundle:Default:help}
+mytrip_user_trust:
+    pattern:  /trust_safety
+    defaults: { _controller: MytripUserBundle:Default:trust}	
+mytrip_user_recreation:
+    pattern:  /recreation
+    defaults: { _controller: MytripUserBundle:Default:recreation}	
+mytrip_user_food:
+    pattern:  /food_drink
+    defaults: { _controller: MytripUserBundle:Default:food}	
+mytrip_user_support:
+    pattern:  /support
+    defaults: { _controller: MytripUserBundle:Default:support}
+mytrip_user_press:
+    pattern:  /press
+    defaults: { _controller: MytripUserBundle:Default:press}
+mytrip_user_blog:
+    pattern:  /blog
+    defaults: { _controller: MytripUserBundle:Default:blog}
+mytrip_user_contact:
+    pattern:  /contactus
+    defaults: { _controller: MytripUserBundle:Default:contact}
+mytrip_user_signin:
+    pattern:  /signin
+    defaults: { _controller: MytripUserBundle:Default:signin}
+mytrip_user_signup:
+    pattern:  /signup
+    defaults: { _controller: MytripUserBundle:Default:signup}
+mytrip_user_forgot:
+    pattern:  /forgot
+    defaults: { _controller: MytripUserBundle:Default:forgot}
+mytrip_user_emailcheck:
+    pattern:  /emailcheck
+    defaults: { _controller: MytripUserBundle:Default:emailcheck}
+mytrip_user_search:
+    pattern:  /search
+    defaults: { _controller: MytripUserBundle:Default:search}
+mytrip_user_destination:
+    pattern:  /destination
+    defaults: { _controller: MytripUserBundle:Default:destination}
+mytrip_user_availability:
+    pattern:  /availability
+    defaults: { _controller: MytripUserBundle:Default:availability}
+mytrip_user_topdestination:
+    pattern:  /topdestination
+    defaults: { _controller: MytripUserBundle:Default:topdestination}
+mytrip_user_changelanguage:
+    pattern:  /changelanguage
+    defaults: { _controller: MytripUserBundle:Default:changelanguage}
+mytrip_user_changecurrency:
+    pattern:  /changecurrency
+    defaults: { _controller: MytripUserBundle:Default:changecurrency}
+mytrip_user_confirm:
+    pattern:  /confirm
+    defaults: { _controller: MytripUserBundle:Default:confirm}
+mytrip_user_profile:
+    pattern:  /profile
+    defaults: { _controller: MytripUserBundle:Default:profile}
+mytrip_user_bookinghistory:
+    pattern:  /bookinghistory
+    defaults: { _controller: MytripUserBundle:Default:bookinghistory}
+mytrip_user_bookingdetails:
+    pattern:  /bookingdetails
+    defaults: { _controller: MytripUserBundle:Default:bookingdetails}
+mytrip_user_cancelbooking:
+    pattern:  /cancelbooking
+    defaults: { _controller: MytripUserBundle:Default:cancelbooking }
+mytrip_user_ajaxcheck:
+    pattern:  /ajaxcheck
+    defaults: { _controller: MytripUserBundle:Default:ajaxcheck}
+mytrip_user_account:
+    pattern:  /account
+    defaults: { _controller: MytripUserBundle:Default:account}
+mytrip_user_logout:
+    pattern:  /logout
+    defaults: { _controller: MytripUserBundle:Default:logout}
+mytrip_user_story:
+    pattern:  /stories
+    defaults: { _controller: MytripUserBundle:Default:story}
+mytrip_user_getstate:
+    pattern:  /getstate
+    defaults: { _controller: MytripUserBundle:Default:getstate }
+mytrip_user_makepayment:
+    pattern:  /makepayment
+    defaults: { _controller: MytripUserBundle:Default:makepayment }
+mytrip_user_paypal:
+    pattern:  /paypal
+    defaults: { _controller: MytripUserBundle:Paypal:index }
+mytrip_user_stripe:
+    pattern:  /stripe
+    defaults: { _controller: MytripUserBundle:Stripe:index }
+mytrip_user_skrill:
+    pattern:  /skrill
+    defaults: { _controller: MytripUserBundle:Skrill:index }
+mytrip_user_beanstream:
+    pattern:  /beanstream
+    defaults: { _controller: MytripUserBundle:Beanstream:index }
+mytrip_user_beanstream_refund:
+    pattern:  /beanstreamrefund
+    defaults: { _controller: MytripUserBundle:Beanstream:beanstreamrefund }
+mytrip_user_globalone:
+    pattern:  /globalone
+    defaults: { _controller: MytripUserBundle:Globalone:index }
+mytrip_user_globalone_refund:
+    pattern:  /globalonerefund
+    defaults: { _controller: MytripUserBundle:Globalone:globalonerefund }
+mytrip_user_details_view:
+    pattern:  /paypaldetails
+    defaults: { _controller: MytripUserBundle:Details:view }
+mytrip_user_paypal_refund:
+    pattern:  /paypalrefund
+    defaults: { _controller: MytripUserBundle:Paypal:paypalrefund }
+mytrip_user_stripe_refund:
+    pattern:  /striperefund
+    defaults: { _controller: MytripUserBundle:Stripe:striperefund }
+mytrip_user_skrill_refund:
+    pattern:  /skrillrefund
+    defaults: { _controller: MytripUserBundle:Skrill:skrillrefund }
+mytrip_user_stripe_view:
+    pattern:  /stripedetails
+    defaults: { _controller: MytripUserBundle:Details:stripe }
+mytrip_user_skrill_view:
+    pattern:  /skrilldetails
+    defaults: { _controller: MytripUserBundle:Details:skrill }
+mytrip_user_facebook:
+    pattern:  /facebook
+    defaults: { _controller: MytripUserBundle:Facebooks:index }
+mytrip_user_twitter:
+    pattern:  /twitter
+    defaults: { _controller: MytripUserBundle:Twitters:index }
+mytrip_user_twitter_callback:
+    pattern:  /twitter/callback
+    defaults: { _controller: MytripUserBundle:Twitters:callback }
+mytrip_user_twitter_register:
+    pattern:  /twitter/register
+    defaults: { _controller: MytripUserBundle:Twitters:register }
+mytrip_user_google:
+    pattern:  /google
+    defaults: { _controller: MytripUserBundle:Googles:index }
+mytrip_user_review:
+    pattern:  /review
+    defaults: { _controller: MytripUserBundle:Review:index }
+mytrip_user_homesearch:
+    pattern:  /homesearchdestination
+    defaults: { _controller: MytripUserBundle:Default:homesearchdestination }
+mytrip_user_destinationDetails:
+    pattern:  /{name}
+    defaults: { _controller: MytripUserBundle:Default:destinationDetails}
+mytrip_user_staticpages:
+    pattern:  /pages/{url}
+    defaults: { _controller: MytripUserBundle:Default:staticpages}
+mytrip_user_hostal_availability_checking:
+    pattern:  /{destination}/{hostal}/roomavailablity
+    defaults: { _controller: MytripUserBundle:Default:roomavailablity}
+mytrip_user_hostal:
+    pattern:  /{destination}/{hostal}
+    defaults: { _controller: MytripUserBundle:Default:hostal}
+mytrip_user_hostal_availability_checkings:
+    pattern:  /booking/{destination}/{hostal}/roomavailablity
+    defaults: { _controller: MytripUserBundle:Default:roomavailablity}
+mytrip_user_booking:
+    pattern:  /booking/{destination}/{hostal}
+    defaults: { _controller: MytripUserBundle:Default:booking}
+mytrip_user_storyDetails:
+    pattern:  /stories/{destination}/{hostal}/{story}
+    defaults: { _controller: MytripUserBundle:Default:storyDetails}

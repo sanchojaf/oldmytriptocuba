@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Destination" table="destination">
+    <id name="destinationId" type="integer" column="destination_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="50" nullable="false"/>
+    <field name="video" type="string" column="video" length="150" nullable="false"/>
+    <field name="latitude" type="string" column="latitude" length="255" nullable="false"/>
+    <field name="longitude" type="string" column="longitude" length="255" nullable="false"/>
+    <field name="createdDate" type="datetime" column="created_date" nullable="false"/>
+    <field name="modifyDate" type="datetime" column="modify_date" nullable="false"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+  </entity>
+</doctrine-mapping>

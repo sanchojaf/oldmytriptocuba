@@ -1,0 +1,31 @@
+Mytrip\AdminBundle\Entity\States:
+    type: entity
+    table: states
+    id:
+        sid:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        cid:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+        state:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+        code:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+    lifecycleCallbacks: {  }

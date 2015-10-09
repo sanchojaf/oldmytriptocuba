@@ -1,0 +1,47 @@
+Mytrip\AdminBundle\Entity\DestinationFeature:
+    type: entity
+    table: destination_feature
+    indexes:
+        destination_id:
+            columns:
+                - destination_id
+        feature_id:
+            columns:
+                - feature_id
+    id:
+        distinationFeatureId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: distination_feature_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        createdDate:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: CURRENT_TIMESTAMP
+            column: created_date
+    manyToOne:
+        destination:
+            targetEntity: Destination
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                destination_id:
+                    referencedColumnName: destination_id
+            orphanRemoval: false
+        feature:
+            targetEntity: Feature
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                feature_id:
+                    referencedColumnName: feature_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

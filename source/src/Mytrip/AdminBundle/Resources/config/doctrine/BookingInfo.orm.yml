@@ -1,0 +1,111 @@
+Mytrip\AdminBundle\Entity\BookingInfo:
+    type: entity
+    table: booking_info
+    indexes:
+        booking_id:
+            columns:
+                - booking_id
+    id:
+        bookingInfoId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: booking_info_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        firstname:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        lastname:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        email:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+        gender:
+            type: string
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+        cccode:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        phone:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        cmcode:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        mobile:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        address:
+            type: string
+            nullable: false
+            length: 150
+            fixed: false
+            comment: ''
+        address1:
+            type: string
+            nullable: true
+            length: 150
+            fixed: false
+            comment: ''
+        country:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        province:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        zip:
+            type: string
+            nullable: false
+            length: 30
+            fixed: false
+            comment: ''
+        city:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+    manyToOne:
+        booking:
+            targetEntity: Booking
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                booking_id:
+                    referencedColumnName: booking_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

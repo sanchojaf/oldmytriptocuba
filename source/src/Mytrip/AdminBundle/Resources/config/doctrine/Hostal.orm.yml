@@ -1,0 +1,112 @@
+Mytrip\AdminBundle\Entity\Hostal:
+    type: entity
+    table: hostal
+    indexes:
+        destination_id:
+            columns:
+                - destination_id
+    id:
+        hostalId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: hostal_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        url:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+        cccode:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        phone:
+            type: string
+            nullable: true
+            length: 150
+            fixed: false
+            comment: ''
+        cmcode:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        mobile:
+            type: string
+            nullable: true
+            length: 150
+            fixed: false
+            comment: ''
+        ownerEmail:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: owner_email
+        video:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+        tripadvisor:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+        latitude:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+        longitude:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+        createdDate:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: CURRENT_TIMESTAMP
+            column: created_date
+        modifyDate:
+            type: datetime
+            nullable: false
+            comment: ''
+            column: modify_date
+        status:
+            type: string
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            default: Active
+    manyToOne:
+        destination:
+            targetEntity: Destination
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                destination_id:
+                    referencedColumnName: destination_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

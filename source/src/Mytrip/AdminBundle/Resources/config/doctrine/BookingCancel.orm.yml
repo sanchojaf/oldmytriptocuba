@@ -1,0 +1,78 @@
+Mytrip\AdminBundle\Entity\BookingCancel:
+    type: entity
+    table: booking_cancel
+    indexes:
+        booking_id:
+            columns:
+                - booking_id
+    id:
+        bookingCancelId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: booking_cancel_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        cancelPercentage:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: cancel_percentage
+        cancelDate:
+            type: date
+            nullable: true
+            comment: ''
+            column: cancel_date
+        refundAmount:
+            type: float
+            nullable: true
+            precision: 8
+            scale: 2
+            comment: ''
+            column: refund_amount
+        refundReferenceno:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+            column: refund_referenceno
+        refundDate:
+            type: date
+            nullable: true
+            comment: ''
+            column: refund_date
+        refundCurrency:
+            type: string
+            nullable: false
+            length: 3
+            fixed: false
+            comment: ''
+            column: refund_currency
+        status:
+            type: string
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+        createdDate:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: CURRENT_TIMESTAMP
+            column: created_date
+    manyToOne:
+        booking:
+            targetEntity: Booking
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                booking_id:
+                    referencedColumnName: booking_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

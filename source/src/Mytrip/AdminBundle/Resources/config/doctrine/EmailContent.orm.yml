@@ -1,0 +1,47 @@
+Mytrip\AdminBundle\Entity\EmailContent:
+    type: entity
+    table: email_content
+    indexes:
+        email_list_id:
+            columns:
+                - email_list_id
+    id:
+        emailContentId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: email_content_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        subject:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+        emailcontent:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+        lan:
+            type: string
+            nullable: true
+            length: 2
+            fixed: false
+            comment: ''
+    manyToOne:
+        emailList:
+            targetEntity: EmailList
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                email_list_id:
+                    referencedColumnName: email_list_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

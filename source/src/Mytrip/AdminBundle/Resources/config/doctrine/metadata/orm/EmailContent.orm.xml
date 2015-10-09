@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="EmailContent" table="email_content">
+    <indexes>
+      <index name="email_list_id" columns="email_list_id"/>
+    </indexes>
+    <id name="emailContentId" type="integer" column="email_content_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="subject" type="text" column="subject" nullable="false"/>
+    <field name="emailcontent" type="text" column="emailcontent" nullable="false"/>
+    <field name="lan" type="string" column="lan" length="2" nullable="false"/>
+    <many-to-one field="emailList" target-entity="EmailList">
+      <join-columns>
+        <join-column name="email_list_id" referenced-column-name="email_list_id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
